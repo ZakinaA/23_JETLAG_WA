@@ -7,6 +7,5 @@ public class Epreuve {
 
     private Integer id;
     private String nom;
-    private String descriptif;
-    private Athlete athlete;
+    private Sport sport;
 }
