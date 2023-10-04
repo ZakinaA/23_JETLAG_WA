@@ -12,7 +12,6 @@ public class Athlete {
     private String nom;
     private String prenom;
     private LocalDate datenaiss ;
-    private Pays pays;
 
 
 
