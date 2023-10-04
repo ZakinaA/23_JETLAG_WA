@@ -36,9 +36,4 @@ public class OlympiadeProxy {
 
         return response.getBody();
     }
-
-
-
-
-
 }

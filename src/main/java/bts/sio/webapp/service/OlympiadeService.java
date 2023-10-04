@@ -14,12 +14,6 @@ public class OlympiadeService {
     @Autowired
     private OlympiadeProxy olympiadeProxy;
 
-    public Iterable<Olympiade> getLesOlympiades() {return olympiadeProxy.getLesOlympiades();}
-
-
-
-
-
+    public Iterable<Olympiade> getLesOlympiades() {return olympiadeProxy.getLesOlympiades();
     }
-
-
+}
