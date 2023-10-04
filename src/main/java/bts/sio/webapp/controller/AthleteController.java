@@ -25,11 +25,11 @@ public class AthleteController {
     @Autowired
     private PaysService paysService;
 
-    @GetMapping("/")
-    public String home(Model model) {
+    @GetMapping("/listeAthlete")
+    public String listeAthlete(Model model) {
         Iterable<Athlete> listAthletes = athleteservice.getAthletes();
         model.addAttribute("athletes", listAthletes);
-        return "home";
+        return "athlete/formListeAthlete";
     }
 
     @GetMapping("/createAthlete")
