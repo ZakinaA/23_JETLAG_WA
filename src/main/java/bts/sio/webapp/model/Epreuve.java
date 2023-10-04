@@ -6,6 +6,6 @@ import lombok.Data;
 public class Epreuve {
 
     private Integer id;
-    private String nom;
+    private String libelle;
     private Sport sport;
 }
