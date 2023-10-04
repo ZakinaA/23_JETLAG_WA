@@ -9,6 +9,6 @@ public class Sport {
     private Integer id;
     private String nom;
     private String descriptif;
-    private String nomImage;
+    private String nom_image;
     private Athlete athlete;
 }

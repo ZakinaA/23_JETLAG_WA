@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Slf4j
 @Component
-public class SportRepository {
+public class SportProxy {
     @Autowired
     private CustomProperties props;
 

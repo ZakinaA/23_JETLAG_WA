@@ -1,7 +1,7 @@
 package bts.sio.webapp.service;
 
 import bts.sio.webapp.model.Sport;
-import bts.sio.webapp.repository.SportRepository;
+import bts.sio.webapp.repository.SportProxy;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class SportService {
 
     @Autowired
-    private SportRepository sportRepository;
+    private SportProxy sportRepository;
 
     public Sport getSport(final int id) {
         return sportRepository.getSport(id);
