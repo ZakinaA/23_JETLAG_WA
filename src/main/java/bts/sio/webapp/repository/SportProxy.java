@@ -47,7 +47,7 @@ public class SportProxy {
      */
     public Sport getSport(int id) {
         String baseApiUrl = props.getApiUrl();
-        String getSportUrl = baseApiUrl + "/Sport/" + id;
+        String getSportUrl = baseApiUrl + "/sport/" + id;
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Sport> response = restTemplate.exchange(
@@ -70,7 +70,7 @@ public class SportProxy {
     public Sport createSport(Sport a) {
 
         String baseApiUrl = props.getApiUrl();
-        String createSportUrl = baseApiUrl + "/Sport";
+        String createSportUrl = baseApiUrl + "/sport";
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Sport> request = new HttpEntity<Sport>(a);
@@ -91,7 +91,7 @@ public class SportProxy {
      */
     public Sport updateSport(Sport e) {
         String baseApiUrl = props.getApiUrl();
-        String updateSportUrl = baseApiUrl + "/Sport/" + e.getId();
+        String updateSportUrl = baseApiUrl + "/sport/" + e.getId();
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Sport> request = new HttpEntity<Sport>(e);
@@ -113,7 +113,7 @@ public class SportProxy {
      */
     public void deleteSport(int id) {
         String baseApiUrl = props.getApiUrl();
-        String deleteSportUrl = baseApiUrl + "/Sport/" + id;
+        String deleteSportUrl = baseApiUrl + "/sport/" + id;
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Void> response = restTemplate.exchange(
