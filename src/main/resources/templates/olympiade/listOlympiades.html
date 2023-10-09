@@ -60,7 +60,7 @@
             <tr th:each="olympiade: ${olympiades}">
                 <td><span th:text="${olympiade.numero}"> Numéro </span></td>
                 <td><span th:text="${olympiade.annee}"> Année </span></td>
-                <td><span th:text="${olympiade.ville}"> Ville </span></td>
+                <td><span th:text="${olympiade.ville.nom}"> Ville </span></td>
 
 
             </tr>
