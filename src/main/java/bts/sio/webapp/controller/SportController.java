@@ -19,6 +19,6 @@ public class SportController {
     public String Sport(Model model) {
         Iterable<Sport> listSports = sportservice.getSports();
         model.addAttribute("sports", listSports);
-        return "formListeSport";
+        return "sport/listeSport";
     }
 }
