@@ -40,4 +40,10 @@ public class EpreuveService {
 
         return savedEpreuve;
     }
+
+    public Iterable<Epreuve> getEpreuvesBySport_id(Long sport_id) {
+        // Appelez la méthode appropriée de votre epreuveRepository pour obtenir les épreuves du sport sélectionné en fonction de sportId.
+        return epreuveRepository.getEpreuvesBySport_id(sport_id);
+    }
+
 }

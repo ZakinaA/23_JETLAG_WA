@@ -124,4 +124,26 @@ public class EpreuveProxy {
 
         log.debug("Delete Athlete call " + response.getStatusCode().toString());
     }
+
+    /**
+     * Get epreuves by sport ID
+     * @param sport_id The ID of the sport
+     * @return An iterable of epreuves associated with the sport
+     */
+    public Iterable<Epreuve> getEpreuvesBySport_id(Long sport_id) {
+        String baseApiUrl = props.getApiUrl();
+        String getEpreuvesBySportUrl = baseApiUrl + "/epreuves/sport/" + sport_id;
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Iterable<Epreuve>> response = restTemplate.exchange(
+                getEpreuvesBySportUrl,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<Iterable<Epreuve>>() {}
+        );
+
+        log.debug("Get Epreuves by Sport call " + response.getStatusCode().toString());
+
+        return response.getBody();
+    }
 }
