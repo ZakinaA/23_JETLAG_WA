@@ -14,10 +14,10 @@ public class OlympiadeController {
     @Autowired
     private OlympiadeService olympiadeService;
 
-    @GetMapping("/olympiade")
-    public String olympiade(Model model) {
+    @GetMapping("/olympiades")
+    public String olympiades(Model model) {
         Iterable<Olympiade> listOlympiade = olympiadeService.getLesOlympiades();
         model.addAttribute("olympiades", listOlympiade);
-        return "olympiade/formOlympiade";
+        return "olympiade/listOlympiades";
     }
 }
