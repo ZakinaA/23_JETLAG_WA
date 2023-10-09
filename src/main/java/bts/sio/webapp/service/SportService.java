@@ -11,18 +11,18 @@ import org.springframework.stereotype.Service;
 public class SportService {
 
     @Autowired
-    private SportProxy sportRepository;
+    private SportProxy sportProxy;
 
     public Sport getSport(final int id) {
-        return sportRepository.getSport(id);
+        return sportProxy.getSport(id);
     }
 
     public Iterable<Sport> getSports() {
-        return sportRepository.getSports();
+        return sportProxy.getSports();
     }
 
     public void deleteSport(final int id) {
-        sportRepository.deleteSport(id);
+        sportProxy.deleteSport(id);
     }
 
     public Sport saveSport(Sport sport) {
@@ -34,9 +34,9 @@ public class SportService {
 
         if(sport.getId() == null) {
             // If id is null, then it is a new employee.
-            savedSport = sportRepository.createSport(sport);
+            savedSport = sportProxy.createSport(sport);
         } else {
-            savedSport = sportRepository.updateSport(sport);
+            savedSport = sportProxy.updateSport(sport);
         }
 
         return savedSport;
