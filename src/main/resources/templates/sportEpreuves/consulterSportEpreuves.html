@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhml"
       xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +34,7 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="/">Accueil</a>
-            <a class="navbar-brand" href="/olympiade">Olympiade</a>
+            <a class="navbar-brand" href="/olympiades">Olympiade</a>
             <a class="navbar-brand" href="/sports">Sport</a>
         </div>
     </div>
@@ -47,17 +48,16 @@
             <thead>
             <tr>
                 <th>libelle</th>
-                <th>date_debut</th>
-                <th>date_fin</th>
+                <th>date de début</th>
+                <th>date de fin</th>
             </tr>
             </thead>
             <tbody>
 
             <tr th:each="epreuve: ${epreuves}">
                 <td><span th:text="${epreuve.libelle}"> libelle </span></td>
-                <td><span th:text="${epreuve.date_debut}"> date_debut </span></td>
-                <td><span th:text="${epreuve.date_fin}"> date_fin </span></td>
-
+                <td><span th:text="${epreuve.date_debut}"> date de début </span></td>
+                <td><span th:text="${epreuve.date_fin}"> date de fin </span></td>
             </tr>
             </tbody>
         </table>
