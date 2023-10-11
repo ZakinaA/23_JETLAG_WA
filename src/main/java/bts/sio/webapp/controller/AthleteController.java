@@ -53,7 +53,7 @@ public class AthleteController {
     @GetMapping("/deleteAthlete/{id}")
     public ModelAndView deleteAthlete(@PathVariable("id") final int id) {
         athleteservice.deleteAthlete(id);
-        return new ModelAndView("redirect:/");
+        return new ModelAndView("redirect:/listeAthlete");
     }
 
     @PostMapping("/saveAthlete")
@@ -64,6 +64,6 @@ public class AthleteController {
             athlete.setNom(current.getNom());
         }
         athleteservice.saveAthlete(athlete);
-        return new ModelAndView("redirect:/");
+        return new ModelAndView("redirect:/listeAthlete");
     }
 }
