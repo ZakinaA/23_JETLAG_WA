@@ -59,13 +59,18 @@
                 <td><span th:text="${sport.nom}"> Nom </span></td>
                 <td><span th:text="${sport.descriptif}"> Descriptif </span></td>
                 <td>
+                    <a th:href="@{/updateSport/{id}(id=${sport.id})}"><button class="btn btn-info">Modifier</button></a>
+                </td>
+                <td>
                     <a th:href="@{/deleteSport/{id}(id=${sport.id})}"><button class="btn btn-danger">Supprimer</button></a>
                 </td>
+
+
             </tr>
             </tbody>
         </table>
     </div>
-    <a th:href="@{/createSport}"><button class="btn btn-info">Ajouter un nouvel sport</button></a>
+    <a th:href="@{/createSport}"><button class="btn btn-info">Ajouter un nouveau sport</button></a>
 
 </div>
 
