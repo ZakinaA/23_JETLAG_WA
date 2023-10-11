@@ -56,7 +56,7 @@
                 <td colspan="3">Aucun sport en base de données</td>
             </tr>
             <tr th:each="sport: ${sports}">
-                <td><span th:text="${sport.nom}"> Nom </span></td>
+                <td><a th:href="@{/epreuves(sport_id=${sport.id}, sportName=${sport.nom})}" th:text="${sport.nom}">Nom</a></td>
                 <td><span th:text="${sport.descriptif}"> Descriptif </span></td>
                 <td>
                     <a th:href="@{/updateSport/{id}(id=${sport.id})}"><button class="btn btn-info">Modifier</button></a>
