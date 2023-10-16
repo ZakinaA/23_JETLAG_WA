@@ -8,6 +8,6 @@ public class Sport {
     private Integer id;
     private String nom;
     private String descriptif;
-    private String nom_image;
+    private String nomImage;
     private Olympiade olympiade;
 }
