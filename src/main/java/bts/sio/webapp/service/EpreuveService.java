@@ -11,18 +11,18 @@ import org.springframework.stereotype.Service;
 public class EpreuveService {
 
     @Autowired
-    private EpreuveProxy epreuveRepository;
+    private EpreuveProxy epreuveProxy;
 
     public Epreuve getEpreuve(final int id) {
-        return epreuveRepository.getEpreuve(id);
+        return epreuveProxy.getEpreuve(id);
     }
 
     public Iterable<Epreuve> getEpreuves() {
-        return epreuveRepository.getEpreuves();
+        return epreuveProxy.getEpreuves();
     }
 
     public void deleteEpreuve(final int id) {
-        epreuveRepository.deleteEpreuve(id);
+        epreuveProxy.deleteEpreuve(id);
     }
 
     public Epreuve saveEpreuve(Epreuve epreuve) {
@@ -33,9 +33,9 @@ public class EpreuveService {
 
         if(epreuve.getId() == null) {
             // If id is null, then it is a new employee.
-            savedEpreuve = epreuveRepository.createEpreuve(epreuve);
+            savedEpreuve = epreuveProxy.createEpreuve(epreuve);
         } else {
-            savedEpreuve = epreuveRepository.updateEpreuve(epreuve);
+            savedEpreuve = epreuveProxy.updateEpreuve(epreuve);
         }
 
         return savedEpreuve;
@@ -43,7 +43,7 @@ public class EpreuveService {
 
     public Iterable<Epreuve> getEpreuvesBySport_id(Long sport_id) {
         // Appelez la méthode appropriée de votre epreuveRepository pour obtenir les épreuves du sport sélectionné en fonction de sportId.
-        return epreuveRepository.getEpreuvesBySport_id(sport_id);
+        return epreuveProxy.getEpreuvesBySport_id(sport_id);
     }
 
 }
