@@ -58,7 +58,7 @@
                 <td colspan="3">Aucune olympiade en base de données</td>
             </tr>
             <tr th:each="olympiade: ${olympiades}">
-                <td><span th:text="${olympiade.numero}"> Numéro </span></td>
+                <td><a th:href="@{/sports/olympiade(olympiade_id=${olympiade.id}, olympiadeAnnee=${olympiade.annee})}" th:text="${olympiade.numero}">Numero</a></td>
                 <td><span th:text="${olympiade.annee}"> Année </span></td>
                 <td><span th:text="${olympiade.ville.nom}"> Ville </span></td>
 
