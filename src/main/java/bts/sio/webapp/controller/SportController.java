@@ -19,11 +19,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class SportController {
 
     @Autowired
-    private SportService sportservice;
+    private SportService sportService;
 
     @GetMapping("/sports")
     public String Sport(Model model) {
-        Iterable<Sport> listSports = sportservice.getSports();
+        Iterable<Sport> listSports = sportService.getSports();
         model.addAttribute("sports", listSports);
         return "sport/listeSport";
     }
@@ -37,27 +37,35 @@ public class SportController {
     }
     @GetMapping("/updateSport/{id}")
     public String updateSport(@PathVariable("id") final int id, Model model) {
-        Sport s = sportservice.getSport(id);
+        Sport s = sportService.getSport(id);
         model.addAttribute("sport", s);
         return "sport/formModifierSport";
     }
 
     @GetMapping("/deleteSport/{id}")
     public ModelAndView deleteSport(@PathVariable("id") final int id) {
-        sportservice.deleteSport(id);
+        sportService.deleteSport(id);
         return new ModelAndView("redirect:/sports");
     }
     @PostMapping("/saveSport")
     public ModelAndView saveSport(@ModelAttribute Sport sport) {
         System.out.println("controller save=" + sport.getDescriptif());
         if(sport.getId() != null) {
-            Sport current = sportservice.getSport(sport.getId());
+            Sport current = sportService.getSport(sport.getId());
         }
-        sportservice.saveSport(sport);
+        sportService.saveSport(sport);
         return new ModelAndView("redirect:/sports");
     }
 
-
+    @GetMapping("/sports/olympiade")
+    public String Sport(@RequestParam(name = "olympiade_id") Long olympiade_id,
+                        @RequestParam(name = "olympiadeAnnee") String olympiadeAnnee,
+                        Model model) {
+        Iterable<Sport> listSports = sportService.getSportsByOlympiade_id(olympiade_id);
+        model.addAttribute("sports", listSports);
+        model.addAttribute("olympiadeAnnee", olympiadeAnnee); // Ajoutez le nom du sport au modèle
+        return "olympiadeSports/consulterOlympiadeSports";
+    }
 
 
 }
