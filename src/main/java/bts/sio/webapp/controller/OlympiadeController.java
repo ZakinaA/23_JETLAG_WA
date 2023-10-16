@@ -42,7 +42,10 @@ public class OlympiadeController {
     public String updateOlympiade(@PathVariable("id") int id, Model model) {
         Olympiade o = olympiadeService.getOlympiade(id);
         model.addAttribute("olympiade", o);
-        return "olympiade/formModifierOlympiade";
+
+        Iterable<Ville> listVille = villeService.getVilles();
+        model.addAttribute("listVille", listVille);
+        return "olympiade/formModifOlympiade";
     }
 
     @GetMapping("/deleteOlympiade/{id}")
