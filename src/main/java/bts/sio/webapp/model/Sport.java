@@ -10,5 +10,4 @@ public class Sport {
     private String descriptif;
     private String nom_image;
     private Olympiade olympiade;
-    private Athlete athlete;
 }

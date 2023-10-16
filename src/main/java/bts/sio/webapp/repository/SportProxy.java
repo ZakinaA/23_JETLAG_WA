@@ -124,4 +124,21 @@ public class SportProxy {
 
         log.debug("Delete Sport call " + response.getStatusCode().toString());
     }
+
+    public Iterable<Sport> getSportsByOlympiade_id(Long olympiade_id) {
+        String baseApiUrl = props.getApiUrl();
+        String getSportsByOlympiadeUrl = baseApiUrl + "/sports/olympiade/" + olympiade_id;
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Iterable<Sport>> response = restTemplate.exchange(
+                getSportsByOlympiadeUrl,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<Iterable<Sport>>() {}
+        );
+
+        log.debug("Get Sports by Olympiade call " + response.getStatusCode().toString());
+
+        return response.getBody();
+    }
 }
