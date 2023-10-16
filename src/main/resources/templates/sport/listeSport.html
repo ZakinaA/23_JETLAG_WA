@@ -25,6 +25,10 @@
         .special {
             padding-top:50px;
         }
+        img {
+            width: 200px;
+            height: 150px;
+        }
     </style>
 </head>
 <body>
@@ -58,7 +62,7 @@
             <tr th:each="sport: ${sports}">
                 <td><span th:text="${sport.nom}"> Nom </span></td>
                 <td><span th:text="${sport.descriptif}"> Descriptif </span></td>
-                <td><img th:src="@{/resources/images/sport.nom_image}"></td>
+                <td><img th:src="@{'/' + ${sport.nomImage} + '/'}"></td>
                 <td>
                     <a th:href="@{/deleteSport/{id}(id=${sport.id})}"><button class="btn btn-danger">Supprimer</button></a>
                 </td>
