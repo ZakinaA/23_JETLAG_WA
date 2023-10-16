@@ -64,12 +64,21 @@
                 <td><span th:text="${olympiade.ville.pays.libelle}"> Pays </span></td>
                 <td><span th:text="${olympiade.ville.nom}"> Ville </span></td>
                 <td><span th:text="${olympiade.annee}"> Année </span></td>
-
+                <td>
+                    <a th:href="@{/updateOlympiade/{id}(id=${olympiade.id})}"><button class="btn btn-info">Modifier</button></a>
+                </td>
 
             </tr>
+
             </tbody>
+
+
         </table>
+
+        <td>
     </div>
+
+
     <a th:href="@{/createOlympiade}"><button class="btn btn-info">Ajouter une nouvelle olympiade</button></a>
     <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
