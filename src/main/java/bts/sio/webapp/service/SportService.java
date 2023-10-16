@@ -42,4 +42,9 @@ public class SportService {
 
         return savedSport;
     }
+
+    public Iterable<Sport> getSportsByOlympiade_id(Long olympiade_id) {
+        // Appelez la méthode appropriée de votre epreuveRepository pour obtenir les épreuves du sport sélectionné en fonction de sportId.
+        return sportProxy.getSportsByOlympiade_id(olympiade_id);
+    }
 }
