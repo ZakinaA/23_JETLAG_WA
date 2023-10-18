@@ -33,14 +33,14 @@ public class SportController {
         return "sport/formNewSport";
     }
     @GetMapping("/updateSport/{id}")
-    public String updateSport(@PathVariable("id") final int id, Model model) {
+    public String updateSport(@PathVariable("id") final Long id, Model model) {
         Sport s = sportService.getSport(id);
         model.addAttribute("sport", s);
         return "sport/formModifierSport";
     }
 
     @GetMapping("/deleteSport/{id}")
-    public ModelAndView deleteSport(@PathVariable("id") final int id) {
+    public ModelAndView deleteSport(@PathVariable("id") final Long id) {
         sportService.deleteSport(id);
         return new ModelAndView("redirect:/sports");
     }

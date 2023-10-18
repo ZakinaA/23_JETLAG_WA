@@ -45,7 +45,7 @@ public class SportProxy {
      * @param id The id of the sport
      * @return The sport which matches the id
      */
-    public Sport getSport(int id) {
+    public Sport getSport(Long id) {
         String baseApiUrl = props.getApiUrl();
         String getSportUrl = baseApiUrl + "/sport/" + id;
 
@@ -111,7 +111,7 @@ public class SportProxy {
      * instead of delete method in order to log the response status code.
      * @param e The sport to delete
      */
-    public void deleteSport(int id) {
+    public void deleteSport(Long id) {
         String baseApiUrl = props.getApiUrl();
         String deleteSportUrl = baseApiUrl + "/sport/" + id;
 

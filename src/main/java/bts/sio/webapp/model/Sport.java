@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Sport {
 
-    private Integer id;
+    private Long id;
     private String nom;
     private String descriptif;
     private String nomImage;

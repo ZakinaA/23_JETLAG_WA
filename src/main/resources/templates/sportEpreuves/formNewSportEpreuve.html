@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+  <title>Paris 2024</title>
+
+  <style>
+    body {
+      padding-top: 50px;
+    }
+
+    .special {
+      padding-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+    </div>
+  </div>
+</nav>
+
+
+<div class="container special">
+
+  <h2 class="h2">Ajout d'une nouvelle épreuve</h2>
+  <div>
+    <form method="post"
+          th:action="@{/saveEpreuve}" th:object="${epreuve}">
+
+      <div class="form-group">
+        <label for="libelleInput">Libelle</label>
+        <input
+                type="text" th:field="*{libelle}" class="form-control" id="libelleInput"
+                aria-describedby="libelleHelp" placeholder="Saisir le libelle"> <small
+              id="libelleHelp" class="form-text text-muted">Merci d'écrire le libelle de l'épreuve.</small>
+      </div>
+      <div class="form-group">
+        <label for="dateDebutInput">Date de début</label>
+        <input
+                type="text" th:field="*{date_debut}" class="form-control" id="dateDebutInput"
+                aria-describedby="dateDebutHelp" placeholder="Saisir la date de début"> <small
+              id="dateDebutHelp" class="form-text text-muted">Merci d'écrire la date de début de l'épreuve.</small>
+      </div>
+      <div class="form-group">
+        <label for="dateFinInput">Date de fin</label>
+        <input
+                type="text" th:field="*{date_fin}" class="form-control" id="dateFinInput"
+                aria-describedby="dateFinHelp" placeholder="Saisir la date de fin"> <small
+              id="dateFinHelp" class="form-text text-muted">Merci d'écrire la date de fin de l'épreuve.</small>
+      </div>
+
+      <input type="hidden" th:field="*{sport.id}" th:value="${sport_id}" />
+
+      <button type="submit" class="btn btn-primary">Créer</button>
+    </form>
+  </div>
+
+</div>
+
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

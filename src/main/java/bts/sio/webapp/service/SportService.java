@@ -13,7 +13,7 @@ public class SportService {
     @Autowired
     private SportProxy sportProxy;
 
-    public Sport getSport(final int id) {
+    public Sport getSport(final Long id) {
         return sportProxy.getSport(id);
     }
 
@@ -21,7 +21,7 @@ public class SportService {
         return sportProxy.getSports();
     }
 
-    public void deleteSport(final int id) {
+    public void deleteSport(final Long id) {
         sportProxy.deleteSport(id);
     }
 
