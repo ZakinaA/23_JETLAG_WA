@@ -25,6 +25,12 @@ public class AthleteController {
     @Autowired
     private PaysService paysService;
 
+    @GetMapping("/")
+    public String PageAccueil(Model model) {
+        return "Accueil/Accueil";
+    }
+
+
     @GetMapping("/listeAthlete")
     public String listeAthlete(Model model) {
         Iterable<Athlete> listAthletes = athleteservice.getAthletes();
