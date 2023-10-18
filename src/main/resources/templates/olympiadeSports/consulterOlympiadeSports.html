@@ -26,6 +26,10 @@
         .special {
             padding-top:50px;
         }
+        img {
+            width: 200px;
+            height: 150px;
+        }
     </style>
 </head>
 <body>
@@ -33,9 +37,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Accueil</a>
-            <a class="navbar-brand" href="/olympiades">Olympiade</a>
-            <a class="navbar-brand" href="/sports">Sport</a>
+            <a class="navbar-brand" href="../olympiades">Retour</a>
         </div>
     </div>
 </nav>
@@ -49,7 +51,7 @@
             <tr>
                 <th>nom</th>
                 <th>descriptif</th>
-                <th>nom de l'image</th>
+                <th>Image</th>
             </tr>
             </thead>
             <tbody>
@@ -57,7 +59,7 @@
             <tr th:each="sport: ${sports}">
                 <td><span th:text="${sport.nom}"> nom </span></td>
                 <td><span th:text="${sport.descriptif}"> descriptif </span></td>
-                <td><span th:text="${sport.nom_image}"> nom de l'image </span></td>
+                <td><img th:src="@{'/' + ${sport.nomImage} + '/'}"></td>
             </tr>
             </tbody>
         </table>
