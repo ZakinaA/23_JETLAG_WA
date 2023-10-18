@@ -68,7 +68,8 @@
                     <a th:href="@{/updateOlympiade/{id}(id=${olympiade.id})}"><button class="btn btn-info">Modifier</button></a>
 
 
-                    <a th:href="@{/deleteOlympiade/{id}(id=${olympiade.id})}"><button class="btn btn-danger">Supprimer</button></a>
+                    <a th:href="@{/deleteOlympiade/{id}(id=${olympiade.id})}" onclick="return confirm('Voulez-vous vraiment supprimer ?');"
+                    ><button class="btn btn-danger">Supprimer </button> </a>
                 </td>
 
             </tr>
