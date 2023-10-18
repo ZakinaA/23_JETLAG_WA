@@ -1,7 +1,9 @@
 package bts.sio.webapp.controller;
 
 import bts.sio.webapp.model.Epreuve;
+import bts.sio.webapp.model.Olympiade;
 import bts.sio.webapp.model.Sport;
+import bts.sio.webapp.model.Ville;
 import bts.sio.webapp.service.EpreuveService;
 
 
@@ -9,10 +11,7 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -43,6 +42,20 @@ public class EpreuveController {
             Epreuve current = epreuveService.getEpreuve(epreuve.getId());
         }
         epreuveService.saveEpreuve(epreuve);
+        return new ModelAndView("redirect:/sports");
+    }
+    @GetMapping("/updateEpreuve/{id}")
+    public String updateEpreuve(@PathVariable("id") int id, Model model) {
+        Epreuve e = epreuveService.getEpreuve(id);
+        model.addAttribute("epreuve", e);
+
+
+        return "sportEpreuves/formModifSportEpreuve";
+    }
+
+    @GetMapping("/deleteEpreuve/{id}")
+    public ModelAndView deleteEpreuve(@PathVariable("id") final int id) {
+        epreuveService.deleteEpreuve(id);
         return new ModelAndView("redirect:/sports");
     }
 

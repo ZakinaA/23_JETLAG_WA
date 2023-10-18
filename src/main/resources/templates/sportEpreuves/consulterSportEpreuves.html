@@ -58,6 +58,12 @@
                 <td><span th:text="${epreuve.libelle}"> libelle </span></td>
                 <td><span th:text="${epreuve.date_debut}"> date de début </span></td>
                 <td><span th:text="${epreuve.date_fin}"> date de fin </span></td>
+                <td>
+                    <a th:href="@{/updateEpreuve/{id}(id=${epreuve.id})}"><button class="btn btn-info">Modifier</button></a>
+
+                    <a th:href="@{/deleteEpreuve/{id}(id=${epreuve.id})}" onclick="return confirm('Voulez-vous vraiment supprimer ?');"
+                    ><button class="btn btn-danger">Supprimer </button> </a>
+                </td>
             </tr>
             <th:block th:with="firstEpreuve=${epreuves[0]}">
                 <a th:href="@{/createSportEpreuve(sport_id=${firstEpreuve.sport.id})}"><button class="btn btn-info">Ajouter une épreuve</button></a>
