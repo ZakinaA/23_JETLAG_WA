@@ -51,7 +51,6 @@
             <tr>
                 <th>nom</th>
                 <th>descriptif</th>
-                <th>Image</th>
             </tr>
             </thead>
             <tbody>
@@ -59,7 +58,6 @@
             <tr th:each="sport: ${sports}">
                 <td><span th:text="${sport.nom}"> nom </span></td>
                 <td><span th:text="${sport.descriptif}"> descriptif </span></td>
-                <td><img th:src="@{'/' + ${sport.nomImage} + '/'}"></td>
             </tr>
             </tbody>
         </table>
