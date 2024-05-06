@@ -53,7 +53,6 @@
             <tr>
                 <th>Nom</th>
                 <th>descriptif</th>
-                <th>Image</th>
             </tr>
             </thead>
             <tbody>
@@ -63,7 +62,6 @@
             <tr th:each="sport: ${sports}">
                 <td><a th:href="@{/epreuves(sport_id=${sport.id}, sportName=${sport.nom})}" th:text="${sport.nom}">Nom</a></td>
                 <td><span th:text="${sport.descriptif}"> Descriptif </span></td>
-                <td><img th:src="@{'/' + ${sport.nomImage} + '/'}"></td>
                 <td>
                     <a th:href="@{/updateSport/{id}(id=${sport.id})}"><button class="btn btn-info">Modifier</button></a>
                 </td>
